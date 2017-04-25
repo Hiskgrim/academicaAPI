@@ -1,0 +1,393 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Url http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /facultad/:
+    get:
+      tags:
+      - facultad
+      description: get Facultad
+      operationId: FacultadController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Facultad'
+        "403": {}
+    post:
+      tags:
+      - facultad
+      description: create Facultad
+      operationId: FacultadController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Facultad content
+        required: true
+        schema:
+          $ref: '#/definitions/Facultad'
+      responses:
+        "201":
+          description: '{int} models.Facultad'
+        "403":
+          description: body is empty
+  /facultad/{id}:
+    get:
+      tags:
+      - facultad
+      description: get Facultad by id
+      operationId: FacultadController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Facultad'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - facultad
+      description: update the Facultad
+      operationId: FacultadController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Facultad content
+        required: true
+        schema:
+          $ref: '#/definitions/Facultad'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Facultad'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - facultad
+      description: delete the Facultad
+      operationId: FacultadController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /proyecto_curricular/:
+    get:
+      tags:
+      - proyecto_curricular
+      description: get ProyectoCurricular
+      operationId: ProyectoCurricularController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/ProyectoCurricular'
+        "403": {}
+    post:
+      tags:
+      - proyecto_curricular
+      description: create ProyectoCurricular
+      operationId: ProyectoCurricularController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ProyectoCurricular content
+        required: true
+        schema:
+          $ref: '#/definitions/ProyectoCurricular'
+      responses:
+        "201":
+          description: '{int} models.ProyectoCurricular'
+        "403":
+          description: body is empty
+  /proyecto_curricular/{id}:
+    get:
+      tags:
+      - proyecto_curricular
+      description: get ProyectoCurricular by id
+      operationId: ProyectoCurricularController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/ProyectoCurricular'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - proyecto_curricular
+      description: update the ProyectoCurricular
+      operationId: ProyectoCurricularController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ProyectoCurricular content
+        required: true
+        schema:
+          $ref: '#/definitions/ProyectoCurricular'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/ProyectoCurricular'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - proyecto_curricular
+      description: delete the ProyectoCurricular
+      operationId: ProyectoCurricularController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_carrera/:
+    get:
+      tags:
+      - tipo_carrera
+      description: get TipoCarrera
+      operationId: TipoCarreraController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoCarrera'
+        "403": {}
+    post:
+      tags:
+      - tipo_carrera
+      description: create TipoCarrera
+      operationId: TipoCarreraController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoCarrera content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoCarrera'
+      responses:
+        "201":
+          description: '{int} models.TipoCarrera'
+        "403":
+          description: body is empty
+  /tipo_carrera/{id}:
+    get:
+      tags:
+      - tipo_carrera
+      description: get TipoCarrera by id
+      operationId: TipoCarreraController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoCarrera'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_carrera
+      description: update the TipoCarrera
+      operationId: TipoCarreraController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoCarrera content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoCarrera'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoCarrera'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_carrera
+      description: delete the TipoCarrera
+      operationId: TipoCarreraController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  Facultad:
+    title: Facultad
+    type: object
+    properties:
+      Direccion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  ProyectoCurricular:
+    title: ProyectoCurricular
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdFacultad:
+        $ref: '#/definitions/Facultad'
+      IdTipoCarrera:
+        $ref: '#/definitions/TipoCarrera'
+      Nombre:
+        type: string
+  TipoCarrera:
+    title: TipoCarrera
+    type: object
+    properties:
+      Descripción:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+tags:
+- name: facultad
+  description: |
+    FacultadController oprations for Facultad
+- name: tipo_carrera
+  description: |
+    TipoCarreraController oprations for TipoCarrera
+- name: proyecto_curricular
+  description: |
+    ProyectoCurricularController oprations for ProyectoCurricular
